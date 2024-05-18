@@ -187,7 +187,8 @@ function updateUIWithoutPopovers(elememt = document) {
 
 updateUIText();
 
-var popoversEnabled = true;
+// TODO: change this line!!!!
+var popoversEnabled = false;
 try {
   if (localStorage.rayOpticsHelp == "off") {
     popoversEnabled = false;

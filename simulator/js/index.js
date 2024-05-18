@@ -346,46 +346,46 @@ window.onload = function (e) {
   document.getElementById('zoomMinus_mobile').onclick = document.getElementById('zoomMinus').onclick;*/
 
 
-  /*document.getElementById('rayDensity').oninput = function () {
+  document.getElementById('rayDensity').oninput = function () {
     scene.rayDensity = Math.exp(this.value);
     document.getElementById('rayDensity').value = this.value;
-    document.getElementById('rayDensity_more').value = this.value;
-    document.getElementById('rayDensity_mobile').value = this.value;
+    /*document.getElementById('rayDensity_more').value = this.value;
+    document.getElementById('rayDensity_mobile').value = this.value;*/
     draw(false, true);
   };
-  document.getElementById('rayDensity_more').oninput = document.getElementById('rayDensity').oninput;
-  document.getElementById('rayDensity_mobile').oninput = document.getElementById('rayDensity').oninput;
+  /*document.getElementById('rayDensity_more').oninput = document.getElementById('rayDensity').oninput;
+  document.getElementById('rayDensity_mobile').oninput = document.getElementById('rayDensity').oninput;*/
 
   document.getElementById('rayDensity').onmouseup = function () {
     scene.rayDensity = Math.exp(this.value); // For browsers not supporting oninput
     document.getElementById('rayDensity').value = this.value;
-    document.getElementById('rayDensity_more').value = this.value;
-    document.getElementById('rayDensity_mobile').value = this.value;
+    /*document.getElementById('rayDensity_more').value = this.value;
+    document.getElementById('rayDensity_mobile').value = this.value;*/
     this.blur();
     draw(false, true);
     createUndoPoint();
   };
-  document.getElementById('rayDensity_more').onmouseup = document.getElementById('rayDensity').onmouseup;
-  document.getElementById('rayDensity_mobile').onmouseup = document.getElementById('rayDensity').onmouseup;
+  /*document.getElementById('rayDensity_more').onmouseup = document.getElementById('rayDensity').onmouseup;
+  document.getElementById('rayDensity_mobile').onmouseup = document.getElementById('rayDensity').onmouseup;*/
 
   document.getElementById('rayDensity').ontouchend = function () {
     scene.rayDensity = Math.exp(this.value); // For browsers not supporting oninput
     document.getElementById('rayDensity').value = this.value;
-    document.getElementById('rayDensity_more').value = this.value;
-    document.getElementById('rayDensity_mobile').value = this.value;
+    /*document.getElementById('rayDensity_more').value = this.value;
+    document.getElementById('rayDensity_mobile').value = this.value;*/
     this.blur();
     draw(false, true);
     createUndoPoint();
   };
-  document.getElementById('rayDensity_more').ontouchend = document.getElementById('rayDensity').ontouchend;
-  document.getElementById('rayDensity_mobile').ontouchend = document.getElementById('rayDensity').ontouchend;
+  /*document.getElementById('rayDensity_more').ontouchend = document.getElementById('rayDensity').ontouchend;
+  document.getElementById('rayDensity_mobile').ontouchend = document.getElementById('rayDensity').ontouchend;*!/*/
 
   document.getElementById('rayDensityPlus').onclick = function () {
     rayDensityValue = Math.log(scene.rayDensity) * 1.0 + 0.1;
     scene.rayDensity = Math.exp(rayDensityValue);
     document.getElementById('rayDensity').value = rayDensityValue;
-    document.getElementById('rayDensity_more').value = rayDensityValue;
-    document.getElementById('rayDensity_mobile').value = rayDensityValue;
+    /*document.getElementById('rayDensity_more').value = rayDensityValue;
+    document.getElementById('rayDensity_mobile').value = rayDensityValue;*/
     this.blur();
     draw(false, true);
   };
@@ -393,12 +393,12 @@ window.onload = function (e) {
     rayDensityValue = Math.log(scene.rayDensity) * 1.0 - 0.1;
     scene.rayDensity = Math.exp(rayDensityValue);
     document.getElementById('rayDensity').value = rayDensityValue;
-    document.getElementById('rayDensity_more').value = rayDensityValue;
-    document.getElementById('rayDensity_mobile').value = rayDensityValue;
+    /*document.getElementById('rayDensity_more').value = rayDensityValue;
+    document.getElementById('rayDensity_mobile').value = rayDensityValue;*/
     this.blur();
     draw(false, true);
   };
-  document.getElementById('rayDensityPlus_mobile').onclick = document.getElementById('rayDensityPlus').onclick;
+  /*document.getElementById('rayDensityPlus_mobile').onclick = document.getElementById('rayDensityPlus').onclick;
   document.getElementById('rayDensityMinus_mobile').onclick = document.getElementById('rayDensityMinus').onclick;
   document.getElementById('rayDensityPlus_more').onclick = document.getElementById('rayDensityPlus').onclick;
   document.getElementById('rayDensityMinus_more').onclick = document.getElementById('rayDensityMinus').onclick;*/
@@ -829,7 +829,7 @@ function JSONInput() {
     if (needFullUpdate) {
       // Update the UI for the loaded scene.
 
-      document.getElementById('showgrid').checked = scene.showGrid;
+      /*document.getElementById('showgrid').checked = scene.showGrid;
       document.getElementById('showgrid_more').checked = scene.showGrid;
       document.getElementById('showgrid_mobile').checked = scene.showGrid;
 
@@ -839,9 +839,9 @@ function JSONInput() {
 
       document.getElementById('lockobjs').checked = scene.lockobjs;
       document.getElementById('lockobjs_more').checked = scene.lockobjs;
-      document.getElementById('lockobjs_mobile').checked = scene.lockobjs;
+      document.getElementById('lockobjs_mobile').checked = scene.lockobjs;*/
 
-      if (scene.observer) {
+      /*if (scene.observer) {
         document.getElementById('observer_size').value = Math.round(scene.observer.r * 2 * 1000000) / 1000000;
         document.getElementById('observer_size_mobile').value = Math.round(scene.observer.r * 2 * 1000000) / 1000000;
       } else {
@@ -855,7 +855,7 @@ function JSONInput() {
       document.getElementById("zoom").innerText = Math.round(scene.scale * 100) + '%';
       document.getElementById("zoom_mobile").innerText = Math.round(scene.scale * 100) + '%';
       document.getElementById('color_mode').checked = scene.colorMode;
-      document.getElementById('color_mode_mobile').checked = scene.colorMode;
+      document.getElementById('color_mode_mobile').checked = scene.colorMode;*/
       modebtn_clicked(scene.mode);
       document.getElementById('mode_' + scene.mode).checked = true;
       document.getElementById('mode_' + scene.mode + '_mobile').checked = true;
