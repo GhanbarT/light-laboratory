@@ -38,6 +38,7 @@ objTypes['mirror'] = class extends LineObjMixin(BaseFilter) {
   }
 
   onRayIncident(ray, rayIndex, incidentPoint) {
+
     var rx = ray.p1.x - incidentPoint.x;
     var ry = ray.p1.y - incidentPoint.y;
     var mx = this.p2.x - this.p1.x;

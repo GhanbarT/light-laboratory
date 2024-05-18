@@ -28,13 +28,13 @@ function resetDropdownButtons() {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  document.getElementById('more-options-dropdown').addEventListener('click', function(e) {
+  /*document.getElementById('more-options-dropdown').addEventListener('click', function(e) {
     e.stopPropagation();
-  });
+  });*/
 
-  document.getElementById('mobile-dropdown-options').addEventListener('click', function(e) {
+  /*document.getElementById('mobile-dropdown-options').addEventListener('click', function(e) {
     e.stopPropagation();
-  });
+  });*/
 
   // Listen for changes to any radio input within a dropdown
   document.querySelectorAll('.dropdown-menu input[type="radio"]').forEach(function(input) {
@@ -194,7 +194,7 @@ try {
   }
 } catch { }
 
-document.getElementById('show_help_popups').checked = popoversEnabled;
+// document.getElementById('show_help_popups').checked = popoversEnabled;
 if (popoversEnabled) {
   updateUIWithPopovers();
 } else {

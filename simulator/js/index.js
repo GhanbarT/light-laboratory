@@ -258,23 +258,23 @@ window.onload = function (e) {
     openFile(this.files[0]);
   };*/
 
-  document.getElementById('color_mode').onclick = function () {
+  /*document.getElementById('color_mode').onclick = function () {
     scene.colorMode = this.checked;
     document.getElementById('color_mode').checked = scene.colorMode;
     document.getElementById('color_mode_mobile').checked = scene.colorMode;
     selectObj(selectedObj);
     this.blur();
     draw(false, true);
-  };
-  document.getElementById('color_mode_mobile').onclick = document.getElementById('color_mode').onclick;
+  };*/
+  // document.getElementById('color_mode_mobile').onclick = document.getElementById('color_mode').onclick;
 
-  document.getElementById('show_help_popups').onclick = function () {
+  /*document.getElementById('show_help_popups').onclick = function () {
     this.blur();
     popoversEnabled = this.checked;
     localStorage.rayOpticsHelp = popoversEnabled ? "on" : "off";
-  };
+  };*/
 
-  document.getElementById('show_status').onclick = function () {
+  /*document.getElementById('show_status').onclick = function () {
     this.blur();
 
     document.getElementById('show_status').checked = this.checked;
@@ -282,24 +282,24 @@ window.onload = function (e) {
 
     document.getElementById('status').style.display = this.checked ? '' : 'none';
     localStorage.rayOpticsShowStatus = this.checked ? "on" : "off";
-  };
-  document.getElementById('show_status_mobile').onclick = document.getElementById('show_status').onclick;
+  };*/
+  // document.getElementById('show_status_mobile').onclick = document.getElementById('show_status').onclick;
 
-  if (typeof (Storage) !== "undefined" && localStorage.rayOpticsShowStatus && localStorage.rayOpticsShowStatus == "on") {
+  /*if (typeof (Storage) !== "undefined" && localStorage.rayOpticsShowStatus && localStorage.rayOpticsShowStatus == "on") {
     document.getElementById('show_status').checked = true;
     document.getElementById('show_status_mobile').checked = true;
     document.getElementById('status').style.display = '';
-  }
+  }*/
 
-  document.getElementById('grid_size').onchange = function () {
+  /*document.getElementById('grid_size').onchange = function () {
     scene.gridSize = parseFloat(this.value);
     document.getElementById('grid_size').value = scene.gridSize;
     document.getElementById('grid_size_mobile').value = scene.gridSize;
     draw(true, false);
   }
-  document.getElementById('grid_size_mobile').onchange = document.getElementById('grid_size').onchange;
+  document.getElementById('grid_size_mobile').onchange = document.getElementById('grid_size').onchange;*/
 
-  document.getElementById('grid_size').onclick = function () {
+  /*document.getElementById('grid_size').onclick = function () {
     this.select();
   }
   document.getElementById('grid_size_mobile').onclick = document.getElementById('grid_size').onclick;
@@ -309,9 +309,9 @@ window.onload = function (e) {
     e.cancelBubble = true;
     if (e.stopPropagation) e.stopPropagation();
   };
-  document.getElementById('grid_size_mobile').onkeydown = document.getElementById('grid_size').onkeydown;
+  document.getElementById('grid_size_mobile').onkeydown = document.getElementById('grid_size').onkeydown;*/
 
-  document.getElementById('observer_size').onchange = function () {
+  /*document.getElementById('observer_size').onchange = function () {
     document.getElementById('observer_size').value = this.value;
     document.getElementById('observer_size_mobile').value = this.value;
     if (scene.observer) {
@@ -343,10 +343,10 @@ window.onload = function (e) {
     this.blur();
   }
   document.getElementById('zoomPlus_mobile').onclick = document.getElementById('zoomPlus').onclick;
-  document.getElementById('zoomMinus_mobile').onclick = document.getElementById('zoomMinus').onclick;
+  document.getElementById('zoomMinus_mobile').onclick = document.getElementById('zoomMinus').onclick;*/
 
 
-  document.getElementById('rayDensity').oninput = function () {
+  /*document.getElementById('rayDensity').oninput = function () {
     scene.rayDensity = Math.exp(this.value);
     document.getElementById('rayDensity').value = this.value;
     document.getElementById('rayDensity_more').value = this.value;
@@ -401,7 +401,7 @@ window.onload = function (e) {
   document.getElementById('rayDensityPlus_mobile').onclick = document.getElementById('rayDensityPlus').onclick;
   document.getElementById('rayDensityMinus_mobile').onclick = document.getElementById('rayDensityMinus').onclick;
   document.getElementById('rayDensityPlus_more').onclick = document.getElementById('rayDensityPlus').onclick;
-  document.getElementById('rayDensityMinus_more').onclick = document.getElementById('rayDensityMinus').onclick;
+  document.getElementById('rayDensityMinus_more').onclick = document.getElementById('rayDensityMinus').onclick;*/
 
 
   document.getElementById('grid').onclick = function (e) {
@@ -412,8 +412,8 @@ window.onload = function (e) {
     this.blur();
     //draw();
   };
-  document.getElementById('grid_more').onclick = document.getElementById('grid').onclick;
-  document.getElementById('grid_mobile').onclick = document.getElementById('grid').onclick;
+  // document.getElementById('grid_more').onclick = document.getElementById('grid').onclick;
+  // document.getElementById('grid_mobile').onclick = document.getElementById('grid').onclick;
 
   document.getElementById('showgrid').onclick = function (e) {
     document.getElementById('showgrid').checked = e.target.checked;
@@ -423,8 +423,8 @@ window.onload = function (e) {
     this.blur();
     draw(true, false);
   };
-  document.getElementById('showgrid_more').onclick = document.getElementById('showgrid').onclick;
-  document.getElementById('showgrid_mobile').onclick = document.getElementById('showgrid').onclick;
+  // document.getElementById('showgrid_more').onclick = document.getElementById('showgrid').onclick;
+  // document.getElementById('showgrid_mobile').onclick = document.getElementById('showgrid').onclick;
 
   document.getElementById('lockobjs').onclick = function (e) {
     document.getElementById('lockobjs').checked = e.target.checked;
@@ -433,8 +433,8 @@ window.onload = function (e) {
     scene.lockobjs = e.target.checked;
     this.blur();
   };
-  document.getElementById('lockobjs_more').onclick = document.getElementById('lockobjs').onclick;
-  document.getElementById('lockobjs_mobile').onclick = document.getElementById('lockobjs').onclick;
+  // document.getElementById('lockobjs_more').onclick = document.getElementById('lockobjs').onclick;
+  // document.getElementById('lockobjs_mobile').onclick = document.getElementById('lockobjs').onclick;
 
   document.getElementById('forceStop').onclick = function () {
     if (timerID != -1) {
@@ -630,11 +630,11 @@ function initParameters() {
 
   selectObj(-1);
 
-  document.getElementById("rayDensity").value = scene.rayDensity_light;
-  document.getElementById("rayDensity_more").value = scene.rayDensity_light;
-  document.getElementById("rayDensity_mobile").value = scene.rayDensity_light;
-  document.getElementById("zoom").innerText = Math.round(scene.scale * 100) + '%';
-  document.getElementById("zoom_mobile").innerText = Math.round(scene.scale * 100) + '%';
+  // document.getElementById("rayDensity").value = scene.rayDensity_light;
+  // document.getElementById("rayDensity_more").value = scene.rayDensity_light;
+  // document.getElementById("rayDensity_mobile").value = scene.rayDensity_light;
+  // document.getElementById("zoom").innerText = Math.round(scene.scale * 100) + '%';
+  // document.getElementById("zoom_mobile").innerText = Math.round(scene.scale * 100) + '%';
   toolbtn_clicked('');
   modebtn_clicked('light');
   scene.backgroundImage = null;
@@ -651,25 +651,25 @@ function initParameters() {
   document.getElementById('grid').checked = false;
   document.getElementById('showgrid').checked = false;
 
-  document.getElementById('lockobjs_more').checked = false;
-  document.getElementById('grid_more').checked = false;
-  document.getElementById('showgrid_more').checked = false;
+  // document.getElementById('lockobjs_more').checked = false;
+  // document.getElementById('grid_more').checked = false;
+  // document.getElementById('showgrid_more').checked = false;
 
-  document.getElementById('lockobjs_mobile').checked = false;
-  document.getElementById('grid_mobile').checked = false;
-  document.getElementById('showgrid_mobile').checked = false;
+  // document.getElementById('lockobjs_mobile').checked = false;
+  // document.getElementById('grid_mobile').checked = false;
+  // document.getElementById('showgrid_mobile').checked = false;
 
-  document.getElementById('color_mode').checked = false;
-  document.getElementById('color_mode_mobile').checked = false;
+  // document.getElementById('color_mode').checked = false;
+  // document.getElementById('color_mode_mobile').checked = false;
 
-  document.getElementById('apply_to_all').checked = false;
-  document.getElementById('apply_to_all_mobile').checked = false;
+  // document.getElementById('apply_to_all').checked = false;
+  // document.getElementById('apply_to_all_mobile').checked = false;
 
-  document.getElementById('grid_size').value = scene.gridSize;
-  document.getElementById('grid_size_mobile').value = scene.gridSize;
+  // document.getElementById('grid_size').value = scene.gridSize;
+  // document.getElementById('grid_size_mobile').value = scene.gridSize;
 
-  document.getElementById('observer_size').value = 40;
-  document.getElementById('observer_size_mobile').value = 40;
+  // document.getElementById('observer_size').value = 40;
+  // document.getElementById('observer_size_mobile').value = 40;
 
   draw();
 }
@@ -889,9 +889,9 @@ function modebtn_clicked(mode1) {
     document.getElementById("rayDensity_mobile").value = Math.log(scene.rayDensity_images);
   }
   else {
-    document.getElementById("rayDensity").value = Math.log(scene.rayDensity_light);
-    document.getElementById("rayDensity_more").value = Math.log(scene.rayDensity_light);
-    document.getElementById("rayDensity_mobile").value = Math.log(scene.rayDensity_light);
+    // document.getElementById("rayDensity").value = Math.log(scene.rayDensity_light);
+    // document.getElementById("rayDensity_more").value = Math.log(scene.rayDensity_light);
+    // document.getElementById("rayDensity_mobile").value = Math.log(scene.rayDensity_light);
   }
   if (scene.mode == 'observer' && !scene.observer) {
     // Initialize the observer
