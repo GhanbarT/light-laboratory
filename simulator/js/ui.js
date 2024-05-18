@@ -280,3 +280,5 @@ function hideAllPopovers() {
     }
   });
 }
+
+localStorage.setItem("win", "0")

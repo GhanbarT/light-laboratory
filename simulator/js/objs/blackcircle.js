@@ -48,7 +48,19 @@ objTypes['blackcircle'] = class extends CircleObjMixin(BaseFilter) {
     }
 
     onRayIncident(ray, rayIndex, incidentPoint) {
-        console.log("You are Victory")
+        const win = +localStorage.getItem('win') || 0
+        if (win) return {
+            isAbsorbed: true
+        };
+        else {
+            const toastLiveExample = document.getElementById('liveToast')
+            /*toastLiveExample.getElementsByClassName('btn-close')[0].addEventListener('click', function () {
+                localStorage.setItem('win', '0')
+            })*/
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastBootstrap.show()
+            localStorage.setItem('win', '1')
+        }
 
         return {
             isAbsorbed: true
