@@ -658,7 +658,7 @@ locales["en"] = {
     "message": "A pair of light blockers which absorbs the incident rays. The size of the hole can be adjusted symmetrically. (Drag or click the two endpoints to create.)"
   },
   "tool_blackcircle_popover": {
-    "message": "A circle light blocker which absorbs the incident rays. (Drag or click to create.)"
+    "message": ""
   },
   "tool_diffractiongrating_popover": {
     "message": "A diffraction grating that splits light at an angle depending on wavelength. Warning: The intensities of diffracted rays may not be accurate. (Drag or click to create.)"
