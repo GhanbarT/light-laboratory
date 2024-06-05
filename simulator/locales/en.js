@@ -103,7 +103,7 @@ locales["en"] = {
     "message": "Aperture"
   },
   "toolname_blackcircle": {
-    "message": "Circle Blocker"
+    "message": "Goal"
   },
   "toolname_diffractiongrating": {
     "message": "Diffraction Grating<sup>Beta</sup>"
@@ -184,7 +184,7 @@ locales["en"] = {
     "message": "Mirror"
   },
   "tool_mirror": {
-    "message": "Segment"
+    "message": "Flat"
   },
   "tool_arcmirror": {
     "message": "Circular Arc"
@@ -238,7 +238,7 @@ locales["en"] = {
     "message": "Aperture"
   },
   "tool_blackcircle": {
-    "message": "Circle Blocker"
+    "message": "Goal"
   },
   "tool_diffractiongrating": {
     "message": "Diffraction Grating<sup>Beta</sup>"
@@ -304,7 +304,7 @@ locales["en"] = {
     "message": "Reset"
   },
   "save": {
-    "message": "Save"
+    "message": "Save New Level"
   },
   "get_link": {
     "message": "Copy Shareable Link"
@@ -325,7 +325,7 @@ locales["en"] = {
     "message": "To share your work, you can <a href=\"https://github.com/ricktu288/ray-optics/blob/master/CONTRIBUTING.md#contributing-items-to-the-gallery\" target=\"_blank\">contribute a new item</a> to the <a href=\"https://phydemo.app/ray-optics/gallery/\" target=\"_blank\">Gallery</a>."
   },
   "open": {
-    "message": "Open"
+    "message": "Open a Level"
   },
   "layoutaids": {
     "message": "Layout Aids"
