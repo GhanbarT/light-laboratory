@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta property="og:title" content="GMM - Light Laboratory!">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+          content="آموزش فیزیک نور، آینه و عدسی با طعم دیجیتال">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+    <link rel="preload" href="/thirdparty/bootstrap-5.1.3/bootstrap.min.css" as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/simulator/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/thirdparty/mathquill/mathquill.css" as="style"
+          onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <title>GMM - Light Laboratory</title>
+    <link rel="icon" href="/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/logo.png">
+</head>
+<body style="background: #222222">
+<main class="mx-auto" style="min-height: 100vh; width: fit-content">
+    <a href="#">
+        <img src="/logo.png" alt="GMM Logo" width="64" height="64" alt="proffesor"
+             style="position: fixed; right: 5px; bottom: 5px">
+    </a>
+    <section class="d-flex justify-content-between align-items-center flex-column gap-5" style="width: max-content">
+        <div class="d-flex justify-content-center align-items-center flex-column gap-5">
+            <h1 style="background: linear-gradient(to right, orangered , yellow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 2; font-size: 3rem;">
+                Light Laboratory
+            </h1>
+            <img src="/img/proffesor.png" width="256" height="256">
+        </div>
+        <div class="d-flex align-items-stretch flex-column gap-2 w-100" id="main-menu">
+            <a role="button" href="/simulator/index.html" class="btn btn-warning">Simulator</a>
+            <button class="btn btn-warning" id="levels-button">Levels</button>
+        </div>
+        <div class="d-flex d-none flex-column align-items-start gap-5 w-100" id="level-list">
+            <div class="d-grid gap-2 text-center w-100" style="grid-template-columns: 1fr 1fr 1fr">
+                <a role="button" href="/simulator/level1.html" class="btn btn-warning">Level 1</a>
+                <a role="button" href="/simulator/level2.html" class="btn btn-warning">Level 2</a>
+                <a role="button" href="/simulator/level3.html" class="btn btn-warning">Level 3</a>
+            </div>
+            <button class="btn btn-danger" id="back-button">< Back</button>
+        </div>
+        <div/>
+    </section>
+</main>
+
+<script src="/thirdparty/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#levels-button').click(function () {
+            $('#main-menu').addClass('d-none');
+            $('#level-list').removeClass('d-none');
+        });
+
+        $('#back-button').click(function () {
+            $('#level-list').addClass('d-none');
+            $('#main-menu').removeClass('d-none');
+        });
+    });
+</script>
+</body>
+</html>
