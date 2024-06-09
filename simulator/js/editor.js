@@ -338,7 +338,7 @@ function canvas_onmousemove(e) {
       draw();
     }
 
-    
+
   }
 }
 
@@ -519,7 +519,7 @@ function selectObj(index) {
   document.getElementById('obj_name').innerHTML = getMsg('toolname_' + scene.objs[index].constructor.type);
   document.getElementById('showAdvanced').style.display = 'none';
   document.getElementById('showAdvanced_mobile_container').style.display = 'none';
-  
+
   document.getElementById('obj_bar_main').style.display = '';
   document.getElementById('obj_bar_main').innerHTML = '';
   scene.objs[index].populateObjBar(objBar);
@@ -562,7 +562,7 @@ function confirmPositioning(ctrl, shift) {
       scene.objs[positioningObj].onDrag(new Mouse(geometry.point(xyData[0], xyData[1]), scene, lastDeviceIsTouch, 2), dragContext, ctrl, shift);
       draw(!scene.objs[positioningObj].constructor.isOptical, true);
     }
-    
+
     createUndoPoint();
   }
 

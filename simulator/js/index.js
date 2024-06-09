@@ -926,6 +926,10 @@ function setScale(value) {
 }
 
 function setScaleWithCenter(value, centerX, centerY) {
+    let url = window.location.href;
+    if (!url.includes("simulator")) return;
+
+
     let scaleChange = value - scene.scale;
     scene.origin.x *= value / scene.scale;
     scene.origin.y *= value / scene.scale;
