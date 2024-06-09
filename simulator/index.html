@@ -23,7 +23,21 @@
     <link rel="apple-touch-icon" href="../logo.png">
 </head>
 <body>
+<style>
+    .link-hover {
+        opacity: 100%;
+    }
+
+    .link-hover:hover {
+        opacity: 75%;
+    }
+</style>
+
 <div style="position: fixed; width: 100%; height: 100%; display: flex; flex-direction: column;">
+    <a href="/">
+        <img src="/logo.png" alt="GMM Logo" width="32" height="32" alt="proffesor"
+             style="position: fixed; right: 5px; bottom: 5px;" class="link-hover">
+    </a>
     <div id="canvas-container" style="display:none">
         <canvas id="canvasGrid"></canvas>
         <canvas id="canvas0"></canvas>
@@ -63,6 +77,10 @@
         <div id="toolbar" class="container-fluid d-none d-lg-block">
             <div class="container-xxl">
                 <div class="row justify-content-between">
+                    <a href="/" class="col-auto">
+                        <img src="/logo.png" alt="GMM Logo" width="52" height="52"
+                             style="right: 5px; bottom: 5px">
+                    </a>
                     <div class="col-auto">
                         <div class="row">
                             <div class="btn-group" role="group">
@@ -690,12 +708,15 @@
         </div>
 
         <!-- mobile tool bar -->
-
         <div id="toolbar-mobile-collapse" class="d-block d-lg-none">
             <div>
                 <div id="toolbar-mobile" class="container-fluid p-0 position-relative">
                     <div class="container-sm p-0">
-                        <div class="row justify-content-between m-0">
+                        <div class="row justify-content-between align-items-center m-0">
+                            <a href="/" class="col p-1">
+                                <img src="/logo.png" alt="GMM Logo" width="64" height="64"
+                                     style="right: 5px; bottom: 5px">
+                            </a>
                             <div class="col p-1">
                                 <div class="btn-group w-100 position-static" role="group">
                                     <button type="button" class="btn shadow-none btn-secondary flex-fill"

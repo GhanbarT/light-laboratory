@@ -51,7 +51,6 @@ objTypes['blackcircle'] = class extends CircleObjMixin(BaseFilter) {
     }
 
     onRayIncident(ray, rayIndex, incidentPoint) {
-        console.log({ray, rayIndex, incidentPoint})
         const win = localStorage.getItem('win')
         if (win === 'true') return {
             isAbsorbed: true
