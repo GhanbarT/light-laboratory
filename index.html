@@ -54,7 +54,12 @@
     // Get the parent div
     let parentDiv = document.getElementById('level-buttons');
     // Get the max-level value from localStorage
-    let maxLevel = localStorage.getItem('max-level') | 1;
+    let maxLevel = localStorage.getItem('max-level');
+    // If the max-level value is not set, set it to 1
+    if (!maxLevel) {
+        maxLevel = 1;
+        localStorage.setItem('max-level', maxLevel);
+    }
     // Define the number of levels
     let numberOfLevels = 5; // Change this to the number of levels you want
 
