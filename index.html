@@ -40,12 +40,8 @@
             <button class="btn btn-warning" id="levels-button">Levels</button>
         </div>
         <div class="d-flex d-none flex-column align-items-start gap-5 w-100" id="level-list">
-            <div class="d-grid gap-2 text-center w-100" style="grid-template-columns: 1fr 1fr 1fr">
-                <a role="button" href="/simulator/level1.html" class="btn btn-warning">Level 1</a>
-                <a role="button" href="/simulator/level2.html" class="btn btn-warning">Level 2</a>
-                <a role="button" href="/simulator/level3.html" class="btn btn-warning">Level 3</a>
-                <a role="button" href="/simulator/level4.html" class="btn btn-warning">Level 4</a>
-            </div>
+            <div id="level-buttons" class="d-grid gap-2 text-center w-100"
+                 style="grid-template-columns: 1fr 1fr 1fr"></div>
             <button class="btn btn-danger" id="back-button">< Back</button>
         </div>
         <div/>
@@ -54,6 +50,30 @@
 
 <script src="/thirdparty/jquery.min.js"></script>
 <script>
+
+    // Get the parent div
+    let parentDiv = document.getElementById('level-buttons');
+    // Get the max-level value from localStorage
+    let maxLevel = localStorage.getItem('max-level') | 1;
+    // Define the number of levels
+    let numberOfLevels = 5; // Change this to the number of levels you want
+
+    // Create the anchor elements and append them to the parent div
+    for (let i = 1; i <= numberOfLevels; i++) {
+        let anchor = document.createElement('a');
+        anchor.setAttribute('role', 'button');
+        anchor.setAttribute('href', `/simulator/level${i}.html`);
+        anchor.classList.add('btn', 'btn-warning');
+        anchor.textContent = `Level ${i}`;
+
+        // If the level counter is greater than the max-level value, add the "disabled" class
+        if (i > maxLevel) {
+            anchor.classList.add('disabled');
+        }
+
+        parentDiv.appendChild(anchor);
+    }
+
     $(document).ready(function () {
         $('#levels-button').click(function () {
             $('#main-menu').addClass('d-none');

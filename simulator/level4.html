@@ -419,7 +419,8 @@
                                        data-popover="tool_blackcircle_popover"
                                        data-image="circle_blocker.svg" data-bs-placement="right"
                                        data-bs-offset="40,0"></label>
-                                <input type="radio" class="btn-check d-none" name="toolsradio" id="tool_" autocomplete="off"
+                                <input type="radio" class="btn-check d-none" name="toolsradio" id="tool_"
+                                       autocomplete="off"
                                        checked>
                                 <label class="btn shadow-none btn-info" for="tool_" data-title="tool_"
                                        data-popover="tool__popover">
@@ -698,7 +699,7 @@
             <div>
                 <div id="toolbar-mobile" class="container-fluid p-0 position-relative">
                     <div class="container-sm p-0">
-                        <div class="row justify-content-between m-0">
+                        <div class="row justify-content-between align-items-center m-0">
                             <a href="/" class="col p-1">
                                 <img src="/logo.png" alt="GMM Logo" width="64" height="64"
                                      style="right: 5px; bottom: 5px">
@@ -755,7 +756,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="col p-1 d-none">
+                            <div class="col p-1">
                                 <button type="button" class="btn shadow-none btn-info w-100"
                                         data-bs-toggle="dropdown" data-bs-display="static" id="mobile-tools">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -766,7 +767,7 @@
                                 </button>
                                 <div class="dropdown-menu mobile-dropdown-menu">
                                     <div class="mobile-dropdown">
-                                        <ul id="mobile-dropdown-tools-root">
+                                        <ul id="mobile-dropdown-tools-root" class="d-none">
                                             <li>
                                                 <button class="btn btn-info dropdown-item mobile-dropdown-trigger d-flex w-100"
                                                         id="mobile-dropdown-trigger-source">
@@ -844,8 +845,7 @@
                                                        data-text="tool_"></label>
                                             </li>
                                         </ul>
-
-                                        <ul id="mobile-dropdown-source" style="display:none">
+                                        <ul id="mobile-dropdown-source" class="d-none" style="display:none">
                                             <li>
                                                 <input type="radio" class="btn-check" name="toolsradio_mobile"
                                                        autocomplete="off" id="tool_laser_mobile">
@@ -871,21 +871,20 @@
                                                        data-text="tool_led"></label>
                                             </li>
                                         </ul>
-
-                                        <ul id="mobile-dropdown-mirror" style="display:none">
+                                        <ul id="mobile-dropdown-mirror">
                                             <li>
                                                 <input type="radio" class="btn-check" name="toolsradio_mobile"
                                                        autocomplete="off" id="tool_mirror_mobile">
                                                 <label class="btn btn-info dropdown-item" for="tool_mirror_mobile"
                                                        data-text="tool_mirror"></label>
                                             </li>
-                                            <li>
+                                            <li class="d-none">
                                                 <input type="radio" class="btn-check" name="toolsradio_mobile"
                                                        autocomplete="off" id="tool_arcmirror_mobile">
                                                 <label class="btn btn-info dropdown-item" for="tool_arcmirror_mobile"
                                                        data-text="tool_arcmirror"></label>
                                             </li>
-                                            <li>
+                                            <li class="d-none">
                                                 <input type="radio" class="btn-check" name="toolsradio_mobile"
                                                        autocomplete="off" id="tool_parabolicmirror_mobile">
                                                 <label class="btn btn-info dropdown-item"
@@ -917,8 +916,7 @@
                                                        data-text="tool_beamsplitter"></label>
                                             </li>-->
                                         </ul>
-
-                                        <ul id="mobile-dropdown-glass" style="display:none">
+                                        <ul id="mobile-dropdown-glass" class="d-none" style="display:none">
                                             <li>
                                                 <input type="radio" class="btn-check" name="toolsradio_mobile"
                                                        autocomplete="off" id="tool_halfplane_mobile">
@@ -978,8 +976,7 @@
                                                        data-text="tool_grin_refractor"></label>
                                             </li>-->
                                         </ul>
-
-                                        <ul id="mobile-dropdown-blocker" style="display:none">
+                                        <ul id="mobile-dropdown-blocker" class="d-none" style="display:none">
                                             <li>
                                                 <input type="radio" class="btn-check" name="toolsradio_mobile"
                                                        autocomplete="off" id="tool_blackline_mobile">
@@ -1010,8 +1007,7 @@
                                                        data-text="tool_diffractiongrating"></label>
                                             </li>-->
                                         </ul>
-
-                                        <ul id="mobile-dropdown-more" style="display:none">
+                                        <ul id="mobile-dropdown-more" class="d-none" style="display:none">
                                             <li>
                                                 <input type="radio" class="btn-check" name="toolsradio_mobile"
                                                        autocomplete="off" id="tool_ruler_mobile">
@@ -1374,7 +1370,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-            You are Victory!
+            <div class="d-flex justify-content-between">
+                <div>
+                    Won!
+                </div>
+                <a role="button" href="/simulator/level5.html" class="btn btn-warning">Level 1</a>
+            </div>
         </div>
     </div>
 </div>

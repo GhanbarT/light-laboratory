@@ -55,7 +55,7 @@ objTypes['blackcircle'] = class extends CircleObjMixin(BaseFilter) {
         if (win === 'true') return {
             isAbsorbed: true
         };
-        else if (ray.brightness_p >= 0.5) {
+        else if (ray.brightness_p >= 0.3) {
             for (let i = 0; i < this.timeoutIDs.length; i++) {
                 clearTimeout(this.timeoutIDs[i]);
             }
@@ -71,6 +71,15 @@ objTypes['blackcircle'] = class extends CircleObjMixin(BaseFilter) {
                 const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
                 toastBootstrap.show()
                 localStorage.setItem('win', `true`)
+                //  read the url of page and extract the level number and save it in localstorage named "max-level" if the currenct level is greater than the max-level
+                const url = window.location.href
+                const level = url.split('/').pop()
+                const levelNumber = level.match(/\d+/)[0]
+                const maxLevel = localStorage.getItem('max-level')
+                if (!maxLevel || +maxLevel < +levelNumber) {
+                    localStorage.setItem('max-level', String(+levelNumber + 1))
+                }
+
             }, 1500)
             this.timeoutIDs.push(timeoutID);
             localStorage.setItem('win-counter', `1`)
