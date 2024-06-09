@@ -20,6 +20,8 @@ objTypes['blackcircle'] = class extends CircleObjMixin(BaseFilter) {
         bandwidth: 10
     };
 
+    timeoutIDs = [];
+
     draw(canvasRenderer, isAboveLight, isHovered) {
         const ctx = canvasRenderer.ctx;
         ctx.beginPath();
@@ -40,6 +42,7 @@ objTypes['blackcircle'] = class extends CircleObjMixin(BaseFilter) {
     }
 
     checkRayIntersects(ray) {
+        localStorage.setItem('win-counter', `0`)
         if (this.checkRayIntersectFilter(ray)) {
             return this.checkRayIntersectsShape(ray);
         } else {
@@ -48,18 +51,30 @@ objTypes['blackcircle'] = class extends CircleObjMixin(BaseFilter) {
     }
 
     onRayIncident(ray, rayIndex, incidentPoint) {
-        const win = +localStorage.getItem('win') || 0
-        if (win) return {
+        console.log({ray, rayIndex, incidentPoint})
+        const win = localStorage.getItem('win')
+        if (win === 'true') return {
             isAbsorbed: true
         };
-        else {
-            const toastLiveExample = document.getElementById('liveToast')
-            /*toastLiveExample.getElementsByClassName('btn-close')[0].addEventListener('click', function () {
-                localStorage.setItem('win', '0')
-            })*/
-            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-            toastBootstrap.show()
-            localStorage.setItem('win', '1')
+        else if (ray.brightness_p >= 0.5) {
+            for (let i = 0; i < this.timeoutIDs.length; i++) {
+                clearTimeout(this.timeoutIDs[i]);
+            }
+            this.timeoutIDs = [];
+            // add timer to after 1.5s do below code
+            let timeoutID = setTimeout(() => {
+                const winCounter = +localStorage.getItem('win-counter') | 0
+                if (!winCounter) return
+                const toastLiveExample = document.getElementById('liveToast')
+                /*toastLiveExample.getElementsByClassName('btn-close')[0].addEventListener('click', function () {
+                    localStorage.setItem('win', '0')
+                })*/
+                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+                toastBootstrap.show()
+                localStorage.setItem('win', `true`)
+            }, 1500)
+            this.timeoutIDs.push(timeoutID);
+            localStorage.setItem('win-counter', `1`)
         }
 
         return {

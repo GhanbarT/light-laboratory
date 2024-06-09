@@ -281,4 +281,5 @@ function hideAllPopovers() {
   });
 }
 
-localStorage.setItem("win", "0")
+localStorage.setItem("win-counter", "0")
+localStorage.setItem("win", "false")
