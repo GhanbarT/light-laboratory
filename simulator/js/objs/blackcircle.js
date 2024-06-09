@@ -76,11 +76,11 @@ objTypes['blackcircle'] = class extends CircleObjMixin(BaseFilter) {
                 const level = url.split('/').pop()
                 const levelNumber = level.match(/\d+/)[0]
                 const maxLevel = localStorage.getItem('max-level')
-                if (!maxLevel || +maxLevel < +levelNumber) {
+                if (!maxLevel || +maxLevel <= +levelNumber) {
                     localStorage.setItem('max-level', String(+levelNumber + 1))
                 }
 
-            }, 1500)
+            }, 1000)
             this.timeoutIDs.push(timeoutID);
             localStorage.setItem('win-counter', `1`)
         }
