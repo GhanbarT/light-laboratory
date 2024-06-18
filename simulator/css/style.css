@@ -2,6 +2,10 @@ body {
     font-family: 'Vazir', sans-serif;
 }
 
+.d-none {
+    display: none;
+}
+
 #canvas0 {
     background-color: #000;
     position: absolute;
