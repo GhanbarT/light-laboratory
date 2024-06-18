@@ -436,3 +436,56 @@ body {
 }
 
 
+#balloons > img {
+    /* Adjust styles for the img inside the #balloons div on mobile devices */
+    width: 225px;
+    height: 225px;
+}
+
+#balloons .d-flex {
+    /* Adjust styles for the .d-flex divs inside the #balloons div on mobile devices */
+    width: 450px;
+    right: 150px;
+    bottom: 100px;
+
+    > button {
+        width: 128px;
+    }
+
+    > img, video {
+        width: 256px;
+    }
+}
+
+@media (max-width: 768px) {
+    #balloons * {
+        /* Adjust styles for the #balloons div on mobile devices */
+        font-size: 0.75rem;
+    }
+
+
+    #balloons > img {
+        /* Adjust styles for the img inside the #balloons div on mobile devices */
+        width: 150px;
+        height: 150px;
+    }
+
+    #balloons .d-flex {
+        /* Adjust styles for the .d-flex divs inside the #balloons div on mobile devices */
+        width: 300px;
+        right: 75px;
+        bottom: 50px;
+
+        > div {
+            margin-inline: 10%;
+        }
+
+        > button {
+            width: 64px;
+        }
+
+        > img, video {
+            width: 156px;
+        }
+    }
+}
