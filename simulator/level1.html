@@ -1387,7 +1387,7 @@
 </div>
 
 
-<div id="balloons" class="position-fixed w-100 h-100" style="background: rgba(0, 0, 0, 0.3);">
+<div id="balloons" class="d-none position-fixed w-100 h-100" style="background: rgba(0, 0, 0, 0.3);">
     <img src="/img/proffesor.png" alt="professor" width="225" height="225" style="position: fixed; right: 0; bottom: 0">
     <div class="d-flex flex-column gap-2 justify-content-center align-items-center text-center position-fixed bg-white p-3"
          style="border-radius: 50%; width: 450px; aspect-ratio: 5/2; right: 150px; bottom: 100px; border: 2px orangered solid; text-wrap: balance;">
@@ -1513,6 +1513,9 @@
         // Get the parent div
         var parentDiv = $("#balloons");
 
+        // Remove the d-none class to make the parent div visible
+        parentDiv.removeClass('d-none');
+
         // Get all the divs/balloons
         var balloons = parentDiv.children("div");
 
@@ -1533,7 +1536,6 @@
             }
         });
     });
-    ;
 </script>
 
 <script>
