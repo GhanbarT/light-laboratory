@@ -17,6 +17,8 @@
     <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="../thirdparty/mathquill/mathquill.css" as="style"
           onload="this.onload=null;this.rel='stylesheet'"/>
+    <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v21.1.0/dist/font-face.css" rel="stylesheet"
+          type="text/css"/>
 
     <title>GMM - Light Laboratory</title>
     <link rel="icon" href="../logo.png" type="image/png">
@@ -1385,6 +1387,41 @@
 </div>
 
 
+<div id="balloons" class="position-fixed w-100 h-100" style="background: rgba(0, 0, 0, 0.3);">
+    <img src="/img/proffesor.png" alt="professor" width="225" height="225" style="position: fixed; right: 0; bottom: 0">
+    <div class="d-flex flex-column gap-2 justify-content-center align-items-center text-center position-fixed bg-white p-3"
+         style="border-radius: 50%; width: 450px; aspect-ratio: 5/2; right: 150px; bottom: 100px; border: 2px orangered solid; text-wrap: balance;">
+        <div style="direction: rtl; text-wrap: balance;">
+            سلام من پروفسور لنز هستم؛ به من کمک کن تا به دانش آموزان بگویم چطور از لنز ها استفاده کنند.
+        </div>
+        <button class="btn btn-warning" style="width: 128px;"> باشه
+        </button>
+    </div>
+    <div class="d-none flex-column gap-2 justify-content-center align-items-center text-center position-fixed bg-white p-3"
+         style="border-radius: 50%; width: 450px; aspect-ratio: 5/2; right: 150px; bottom: 100px; border: 2px orangered solid;text-wrap: balance;">
+        <div style="direction: rtl; text-wrap: balance;">
+            هدف ما اینه که نور رو به سمت هدف مورد نظر هدایت کنیم.
+            برای اینکار از لنز ها و آینه ها استفاده میکنیم.
+        </div>
+        <button class="btn btn-warning" style="width: 128px"> باشه
+        </button>
+    </div>
+    <div class="d-none flex-column gap-1 justify-content-center align-items-center text-center position-fixed bg-white p-3"
+         style="border-radius: 50%; width: 600px; aspect-ratio: 5/2; right: 125px; bottom: 75px; border: 2px orangered solid; text-wrap: balance;">
+        <div style="direction: rtl; text-wrap: balance; margin-inline: 15%">
+            برای اینکه یادبگیری چطور میشه المان ها رو حرکت بدیم ویدئو زیر رو ببین.
+        </div>
+        <img alt="artwork"
+             src="https://auctionhouse-mainnet.ams3.cdn.digitaloceanspaces.com/original/a94266b3bb78a1c354968ac7f2558bc02508cc7abc700b6f026ed8749fd05811"
+             decoding="async" data-nimg="fill"
+             style="box-sizing: border-box; border: none; margin: auto; width: 256px; aspect-ratio: 16/9; object-fit: cover;">
+        <button class="btn btn-warning" style="width: 128px">
+            دیدم
+        </button>
+    </div>
+</div>
+
+
 <!--Thirdparty scripts-->
 <script src="../thirdparty/jquery.min.js"></script>
 <script src="../thirdparty/bootstrap-5.1.3/bootstrap.bundle.min.js"></script>
@@ -1470,6 +1507,34 @@
 
 <script src="js/objs/handle.js"></script>
 <script src="js/objs/cropbox.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Get the parent div
+        var parentDiv = $("#balloons");
+
+        // Get all the divs/balloons
+        var balloons = parentDiv.children("div");
+
+        // Initially hide all balloons except the first one
+        balloons.not(":first").addClass('d-none').removeClass('d-flex');
+
+        // When a button inside a balloon is clicked
+        balloons.find("button").click(function () {
+            // Hide the current balloon
+            $(this).parent().addClass('d-none').removeClass('d-flex');
+
+            // If there is a next balloon, show it. Otherwise, hide all balloons and the parent div
+            if ($(this).parent().next().length != 0) {
+                $(this).parent().next().addClass('d-flex').removeClass('d-none');
+            } else {
+                balloons.addClass('d-none').removeClass('d-flex');
+                parentDiv.addClass('d-none');
+            }
+        });
+    });
+    ;
+</script>
 
 <script>
     window.onbeforeunload = () => {
